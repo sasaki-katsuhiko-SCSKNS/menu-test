@@ -6,22 +6,23 @@ const { login, logout, getUserInfo, getMenusByEnv } = new YnaG3SystemAdapter();
 
 const staticMenus = [
   // Static Menus Data Example
-  // {
-  //   path: '/demo',
-  //   meta: {
-  //     title: 'blank.title.demo',
-  //     rank: 10,
-  //   },
-  //   children: [
-  //     {
-  //       path: '/demo/Demo01',
-  //       name: 'Demo01',
-  //       meta: {
-  //         title: 'blank.title.demo01',
-  //       },
-  //     },
-  //   ],
-  // },
+  {
+    // path: '/demo',
+    // meta: {
+    //   title: 'blank.title.demo',
+    //   rank: 10,
+    // },
+    children: [
+      {
+        path: '/noModule/UserDetail',
+        name: 'UserDetail',
+        meta: {
+        //   title: 'blank.title.userDetail',
+          showLink: false, // ここでshowLinkをfalseに設定
+        },
+      },
+    ],
+  },
 ];
 
 /**
@@ -29,6 +30,8 @@ const staticMenus = [
  * @type {import("viy-menu").MenuOptions}
  */
 const menuOptions = {
+  title: 'ライダー備品管理システム',
+  mode:'horizontal',
   i18n,
   getMenus: () => getMenusByEnv(staticMenus),
   login,
