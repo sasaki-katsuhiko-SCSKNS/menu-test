@@ -1,0 +1,1 @@
+import{d as s,i as c,c as u,f as i,g as p}from"./index-Cy9i9ygC.js";window._VIY_MENU_VERSION_="2.1.1";const l=s({name:"Redirect",__name:"redirect",setup(d){const{currentRoute:r,replace:t}=c(),{params:a,query:n}=u(r),{path:e}=a,o=Array.isArray(e)?e.join("/"):e;return t({path:`/${o}`,query:n}),(m,_)=>(i(),p("div"))}});export{l as default};
