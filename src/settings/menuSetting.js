@@ -1,6 +1,7 @@
 import { YnaG3SystemAdapter } from 'viy-menu';
 
 import i18n from '@/i18n';
+import pluginsUserauthorize from '@ymc-group/plugins-userauthorize';
 
 const { login, logout, getUserInfo, getMenusByEnv } = new YnaG3SystemAdapter();
 
@@ -31,13 +32,14 @@ const staticMenus = [
  */
 const menuOptions = {
   title: 'ライダー備品管理システム',
-  mode:'horizontal',
+  mode: 'horizontal',
   i18n,
   getMenus: () => getMenusByEnv(staticMenus),
   login,
   logout,
   getUserInfo,
   views: import.meta.glob('/src/views/**/*.{vue,jsx}'),
+  modules: [pluginsUserauthorize()],
 };
 
 export default menuOptions;
